@@ -1,3 +1,5 @@
+Encontre uma relação de recorrência para os subproblemas de modo que um uma instancia não precise ser calculada mais de uma vez
+
 ordem:
 https://www.youtube.com/watch?v=WNPN3C3twfM&list=PLgMem-KiO8qFuuDs4zN8Ec1dzpbqR-pDn&index=28
 https://www.youtube.com/watch?v=W3UGZ2t7BZg&list=PLgMem-KiO8qFuuDs4zN8Ec1dzpbqR-pDn&index=35
