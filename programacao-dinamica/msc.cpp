@@ -29,6 +29,7 @@ int main()
     cin>>cepe;
     int m = guidi.size();
     int n = cepe.size();
+    char construcao[m+1][n+1];
     //soma nas diagonais, por isso m+1
     int mt[m+1][n+1];
 
@@ -38,17 +39,43 @@ int main()
             mt[i][j] = 0;
         }
     }
-
+    for(int i=0; i<(m+1); i++){
+        for(int j=0; j<n+1; j++){
+            construcao[i][j] = '0';
+        }
+    }
     for(int i=1; i<(m+1); i++){
         for(int j=1; j<n+1; j++){
             if(guidi[i-1]==cepe[j-1]){
                 mt[i][j] = mt[i-1][j-1] + 1;
+                construcao[i][j] = guidi[i-1];
             }else{
-                mt[i][j] = max(mt[i-1][j], mt[i][j-1]);
+                if(mt[i-1][j]>=mt[i][j-1]){
+                    mt[i][j] = mt[i-1][j];
+                    construcao[i][j] = guidi[i];
+                }else{
+                    mt[i][j] = mt[i][j-1];
+                    construcao[i][j] = cepe[j];
+                }
+                //mt[i][j] = max(mt[i-1][j], mt[i][j-1]);
             }
         }
     }
+    cout<<"m: "<<endl;
+    for(int i=0; i<(m+1); i++){
+        for(int j=0; j<(n+1); j++){
+            cout<<mt[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
 
-    cout<<mt[m][n]<<endl;
+    cout<<"b: "<<endl;
+    for(int i=0; i<(m+1); i++){
+        for(int j=0; j<(n+1); j++){
+            cout<<construcao[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+    //cout<<mt[m][n]<<endl;
     return 0;
 }
