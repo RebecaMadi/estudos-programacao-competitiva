@@ -7,7 +7,19 @@
 using namespace std;
 
 /**
+ * Aplicação de DP
+ * Relação de recorrência da solução ótima:
+ *  se  caractere Xm == Ym:
+ *      Xm está na subsequencia
+ *      soma o tamanho e armazena o caractere
+ * senão:
+ *      verifica quem é maior, andando uma casa para trás em X ou Y
+ *      maior(msc[Xm-1, Ym], msc(Xm, Ym-1))
+ * 
+ * Pode haver mais de uma subsequencia
  * Uma subsequencia não necessariamente é uma sequencia
+ * DP funciona de forma bottom-up, calculando cada parte até chegar no todo, ou seja, para cada valor que eu for calcular os valores antes dele já foram calculados
+ * A "recursão" da programação dinâmica é pelo acesso direto do valor na matriz
 */
 
 int main()
